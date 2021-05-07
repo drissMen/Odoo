@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>    
+    <!-- Add instructor field to existing view -->
+    <record model="ir.ui.view" id="pat_form_view">
+        <field name="name">pat.matricule</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Info_Supplementaire">
+                    <group>
+                        <field name="assurance"/>
+                        <field name="matricule"/>
+                        <field name="prescripteur"/>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="contact_list_action">
+        <field name="name">Contacts</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem id="main_pharmacie_menu" name="Pharmacie2"/>
+    <menuitem id="configuration_menu" name="Configuration" parent="main_pharmacie_menu"/>
+    <menuitem id="contact_menu" name="Contacts" parent="main_pharmacie_menu" action="contact_list_action"/>
+</odoo>
