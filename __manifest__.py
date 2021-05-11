@@ -26,6 +26,8 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/pat.xml',
+        'views/assets.xml',
+        'views/pos_confi.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
